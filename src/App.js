@@ -5,6 +5,7 @@ import Home from './components/Home';
 import DiagnosesContainer from './containers/DiagnosesContainer';
 import Diagnosis from './components/Diagnosis';
 import {fetchDiagnoses} from './actions/fetchDiagnoses';
+import { BrowserRouter as Router } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <>
+      <Router>
       <NavLink to='/'>Home</NavLink>
       <br/>
       <NavLink to='/diagnoses'>All Diagnoses</NavLink>
@@ -27,6 +29,7 @@ class App extends Component {
         <Route path='/diagnoses' render={(routerProps) => <DiagnosesContainer {...routerProps} diagnoses={this.props.diagnoses} />} />
         <Route path='/' component={Home} />
       </Switch>
+      </Router>
       </>
   );
   }
