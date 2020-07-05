@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import './index.css';
 import App from './App';
 import diagnosisReducer from './reducers/diagnosisReducer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import Container from 'react-bootstrap/Container';
 // import * as serviceWorker from './serviceWorker';
 
