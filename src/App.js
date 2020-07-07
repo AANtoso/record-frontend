@@ -19,16 +19,16 @@ class App extends Component {
     return (
       <>
       <Router>
-      <NavLink to='/'>Home</NavLink>
-      <br/>
-      <NavLink to='/diagnoses'>All Diagnoses</NavLink>
-      <br/><br/>
+        <NavLink to='/'>Home</NavLink>
+        <br/>
+        <NavLink to='/diagnoses'>All Diagnoses</NavLink>
+        <br/><br/>
 
-      <Switch>
-        <Route path='/diagnoses/:id' render={(routerProps) => <Diagnosis {...routerProps} diagnoses={this.props.diagnoses} />} />
-        <Route path='/diagnoses' render={(routerProps) => <DiagnosesContainer {...routerProps} diagnoses={this.props.diagnoses} />} />
-        <Route path='/' component={Home} />
-      </Switch>
+        <Switch>
+          <Route exact path='/diagnoses/:id' render={(routerProps) => <Diagnosis {...routerProps} diagnoses={this.props.diagnoses} />} />
+          <Route exact path='/diagnoses' render={(routerProps) => <DiagnosesContainer {...routerProps} diagnoses={this.props.diagnoses} />} />
+          <Route exact path='/' component={Home} />
+        </Switch>
       </Router>
       </>
   );
@@ -41,4 +41,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchDiagnoses})(App)
+const mapDispatchToProps = dispatch => ({
+  fetchDiagnoses: () => dispatch(fetchDiagnoses())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

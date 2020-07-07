@@ -14,9 +14,7 @@ class MedicationInput extends Component {
 
     handleOnChange = event => {
         this.setState({
-            name: event.target.value,
-            dose: event.target.value,
-            frequency: event.target.value 
+            [event.target.name]: event.target.value
         })
     }
     handleYes = () => {

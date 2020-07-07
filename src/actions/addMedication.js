@@ -1,3 +1,5 @@
+import { addMedicationAction } from "../reducers/diagnosisReducer"
+
 export const addMedication = (medication, diagnosisID) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/diagnoses/${diagnosisID}/medications`, {
@@ -9,6 +11,8 @@ export const addMedication = (medication, diagnosisID) => {
             body: JSON.stringify(medication)
         })
         .then(response => response.json())
-        .then(diagnosis => dispatch({ type:'ADD_MEDICATION', payload: diagnosis }))
+        .then(medication => {
+            dispatch(addMedicationAction(medication))
+        })
     }
 }

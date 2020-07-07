@@ -6,10 +6,11 @@ import Button from 'react-bootstrap/Button';
 const Medication = props => {
     return (
         <div>
-            <Accordion defaultActiveKey='0'>
+            <Accordion defaultActiveKey>
                 <Accordion.Toggle as={Button} variant='info' >
                     {props.medication}
                 </Accordion.Toggle>
+            
             </Accordion>
         </div>
     )
