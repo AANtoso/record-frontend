@@ -2,6 +2,7 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
+import ActionsContainer from '../containers/ActionsContainer'
 
 const Medication = props => {
     // const handleDelete = (medication) => {
@@ -15,7 +16,7 @@ const Medication = props => {
                 <Accordion.Toggle as={Button} variant='info' >
                     {props.medication}
                 </Accordion.Toggle>
-
+                <ActionsContainer medication={props.medication} />
             </Accordion>
         </div>
     )
