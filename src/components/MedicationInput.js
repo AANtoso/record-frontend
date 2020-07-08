@@ -9,7 +9,7 @@ class MedicationInput extends Component {
         name: '',
         dose: '',
         frequency: '',
-        called_in: false
+        called_in: ''
     }
 
     handleOnChange = event => {
