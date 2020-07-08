@@ -1,25 +1,30 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
-import ActionsContainer from '../containers/ActionsContainer'
+import {deleteMedication} from '../actions/deleteMedication'
+import { connect } from 'react-redux'
 
 const Medication = props => {
-    // const handleDelete = (medication) => {
-    //     console.log('DELETE MEDICATION', medication);
-    //     props.deleteMedication(medication.id)
-    // };
+// debugger
+
+    const handleDelete = (event) => {
+        // debugger
+        const medId = event.target.parentElement.parentElement.dataset.id
+        const dId = event.target.parentElement.parentElement.dataset.diagnosisId
+        event.target.parentElement.parentElement.remove()
+        props.deleteMedication(medId, dId)
+    }
 
     return (
-        <div>
+        <div data-id={props.id} data-diagnosis-id={props.diagnosisID}>
             <Accordion defaultActiveKey>
                 <Accordion.Toggle as={Button} variant='info' >
                     {props.medication}
                 </Accordion.Toggle>
-                <ActionsContainer medication={props.medication} />
+                <Button size='sm' variant='outline-danger' onClick={handleDelete}>Delete</Button>
             </Accordion>
         </div>
     )
 }
 
-export default Medication;
+export default connect(null, {deleteMedication})(Medication);
