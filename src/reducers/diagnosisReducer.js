@@ -20,15 +20,15 @@ export default function diagnosisReducer(state = initialState, action) {
                 ...state,
                 medications: [...state.medications, action.payload.medication]
             }
-        // case DELETE_MEDICATION:
-        //     let remainingDiagnoses = state.diagnoses.map(diagnosis => {
-        //         if (diagnosis.id === action.payload.id) {
-        //             return action.payload
-        //         } else {
-        //             return diagnosis
-        //         }
-        //     })
-        //     return {...state, diagnoses: remainingDiagnoses}
+        case DELETE_MEDICATION:
+            let remainingDiagnoses = state.diagnoses.map(diagnosis => {
+                if (diagnosis.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return diagnosis
+                }
+            })
+            return {...state, diagnoses: remainingDiagnoses}
         default:
             return state
     }

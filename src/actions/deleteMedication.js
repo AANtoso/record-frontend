@@ -1,4 +1,4 @@
-export const addMedication = (medicationID, diagnosisID) => {
+export const deleteMedication = (medicationID, diagnosisID) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/diagnoses/${diagnosisID}/medications/${medicationID}`, {
             method: 'DELETE'
