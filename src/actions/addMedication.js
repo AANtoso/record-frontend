@@ -12,7 +12,7 @@ export const addMedication = (medication, diagnosisID) => {
         })
         .then(response => response.json())
         .then(medication => {
-            dispatch(addMedicationAction(medication))
+            dispatch(addMedicationAction(medication, diagnosisID))
         })
     }
 }

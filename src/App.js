@@ -42,10 +42,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  // debugger
   return {
     diagnoses: state.diagnoses
-    // medications: state.medications
   }
 }
 

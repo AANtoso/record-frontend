@@ -1,4 +1,4 @@
-import { fetchDiagnosesAction, getExistingMedications } from "../reducers/diagnosisReducer"
+import { addFetchedDiagnoses, getAllMeds } from "../reducers/diagnosisReducer"
 
 export const fetchDiagnoses = () => {
     return dispatch => {
@@ -9,15 +9,14 @@ export const fetchDiagnoses = () => {
         .then(response => response.json())
         .then(diagnoses => {
             const medications = []
-            // console.log(diagnoses)
-            dispatch(fetchDiagnosesAction(diagnoses))
+            dispatch(addFetchedDiagnoses(diagnoses))
             diagnoses.forEach(diagnosis => {
                 diagnosis.medications.forEach(medication => {
                     // debugger
                     medications.push(medication)
                 })
             })
-            dispatch(getExistingMedications(medications))
+            dispatch(getAllMeds(medications))
         })
     }
 }

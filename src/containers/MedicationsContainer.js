@@ -5,21 +5,22 @@ import MedicationInput from '../components/MedicationInput';
 import { connect } from 'react-redux';
 
 class MedicationsContainer extends Component {
+    
     render() {
         return (
             <div>
                 <MedicationInput diagnosis={this.props.diagnosis} />
-                <Medications diagnoses={this.props.diagnoses} />
+                <Medications diagnosis={this.props.diagnosis} />
             </div>
         );
     }
 }
 
-const mapStateToProps = state => ({
-    diagnoses: state.diagnoses
+// const mapStateToProps = state => ({
+//     diagnoses: state.diagnoses
    
-})
+// })
 
-export default connect(mapStateToProps, {})(MedicationsContainer)
+// export default connect(null, null)(MedicationsContainer)
 
-// export default MedicationsContainer
+export default MedicationsContainer

@@ -1,32 +1,26 @@
 const initialState = {
     diagnoses: [],
-    medications: []
+    medications: [],
+    particularDiagMeds: []
 }
 
 export default function diagnosisReducer(state = initialState, action) {
     switch (action.type) {
-        case FETCH_DIAGNOSES:
-            console.log(action.type, state)
+        case ADD_DIAGNOSES_FETCHED:
             return {
                 ...state,
+                loading: false,
                 diagnoses: action.payload.diagnoses
             }
-        case GET_EXISTING_MEDICATIONS:
-            return {
-                ...state,
-                medications: action.payload.medications
-            }
-
-        // case GET_A_DIAGNOSES_MEDICATION:
-        //     return {
-        //         ...state,
-        //         medications: action.payload.medications
-        //     }
-
         case ADD_MEDICATION:
             return  {
                 ...state,
-                medications: [...state.medications, action.payload.medication]
+                medications: [...state.medications, action.payload.medication],
+            }
+        case GET_ALL_MEDS: 
+            return {
+                ...state,
+                medications: action.payload.medications
             }
         case DELETE_MEDICATION:
             let remainingDiagnoses = state.diagnoses.map(diagnosis => {
@@ -42,46 +36,37 @@ export default function diagnosisReducer(state = initialState, action) {
     }
 }
 
-//ACTION TYPES
-const FETCH_DIAGNOSES = "FETCH_DIAGNOSES"
-const GET_EXISTING_MEDICATIONS = "GET_EXISTING_MEDICATIONS"
+const ADD_DIAGNOSES_FETCHED = "ADD_DIAGNOSES_FETCHED"
 const ADD_MEDICATION = 'ADD_MEDICATION'
 const DELETE_MEDICATION = 'DELETE_MEDICATION'
-// const GET_A_DIAGNOSES_MEDICATION = 'GET_A_DIAGNOSES_MEDICATION'
+const GET_ALL_MEDS = "GET_ALL_MEDS"
 
 //ACTION_CREATORS
-export const fetchDiagnosesAction = diagnoses => {
-    // console.log(diagnoses)
+
+export const addFetchedDiagnoses = diagnoses => {
     return {
-        type: FETCH_DIAGNOSES, 
+        type: ADD_DIAGNOSES_FETCHED,
         payload: {
             diagnoses
         }
     }
-}   
+}
 
-export const getExistingMedications = medications => {
+//implicit returning going on here
+export const addMedicationAction = medication => {
     return {
-        type: GET_EXISTING_MEDICATIONS,
+        type: ADD_MEDICATION,
+        payload: {
+            medication
+        }
+    }
+}
+
+export const getAllMeds = medications => {
+    return {
+        type: GET_ALL_MEDS,
         payload: {
             medications
         }
     }
 }
-
-// export const getADiagnosesMedications = (medications, diagnosis_id) => {
-//     return {
-//         type: GET_A_DIAGNOSES_MEDICATION,
-//         payload: {
-//             medications: medications.filter(medication => medication.diagnosis_id === diagnosis_id)
-//         }
-//     }
-// }
-
-//implicit returning going on here
-export const addMedicationAction = medication => ({
-    type: ADD_MEDICATION,
-    payload: {
-        medication
-    }
-})
