@@ -8,6 +8,7 @@ import {fetchDiagnoses} from './actions/fetchDiagnoses';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
+// import Medications from './components/Medications';
 
 class App extends Component {
 
@@ -26,6 +27,11 @@ class App extends Component {
 
         <Switch>
           <Route exact path='/diagnoses/:id' render={(routerProps) => <Diagnosis {...routerProps} diagnoses={this.props.diagnoses} />} />
+          {/* <Route exact path='/diagnoses/:id' render={(routerProps) => {
+            const medications = this.props.medications.filter(medication => medication.diagnosis_id === routerProps.match.params.id)
+            // debugger
+            return <Diagnosis {...routerProps} medications={medications} />
+          }} /> */}
           <Route exact path='/diagnoses' render={(routerProps) => <DiagnosesContainer {...routerProps} diagnoses={this.props.diagnoses} />} />
           <Route exact path='/' component={Home} />
         </Switch>
@@ -36,8 +42,10 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  // debugger
   return {
     diagnoses: state.diagnoses
+    // medications: state.medications
   }
 }
 

@@ -9,9 +9,11 @@ export const fetchDiagnoses = () => {
         .then(response => response.json())
         .then(diagnoses => {
             const medications = []
+            // console.log(diagnoses)
             dispatch(fetchDiagnosesAction(diagnoses))
             diagnoses.forEach(diagnosis => {
                 diagnosis.medications.forEach(medication => {
+                    // debugger
                     medications.push(medication)
                 })
             })

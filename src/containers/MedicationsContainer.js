@@ -17,6 +17,9 @@ class MedicationsContainer extends Component {
 
 const mapStateToProps = state => ({
     diagnoses: state.diagnoses
+   
 })
 
 export default connect(mapStateToProps, {})(MedicationsContainer)
+
+// export default MedicationsContainer

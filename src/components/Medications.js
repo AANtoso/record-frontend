@@ -11,8 +11,8 @@ const Medications = props => {
         // debugger
         const medId = event.target.parentElement.parentElement.dataset.id
         const dId = event.target.parentElement.parentElement.dataset.diagnosisId
-        event.target.parentElement.parentElement.remove()
         props.deleteMedication(medId, dId)
+        event.target.parentElement.parentElement.remove()
     }
 
     const renderMedications = props.medications.map(medication => {
@@ -41,3 +41,5 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, {deleteMedication})(Medications);
+
+//Only show the medications for the diagnosis that is currently displayed.
