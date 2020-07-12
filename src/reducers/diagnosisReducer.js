@@ -35,7 +35,7 @@ export default function diagnosisReducer(state = initialState, action) {
             return state
     }
 }
-
+//ACTION_TYPES
 const ADD_DIAGNOSES_FETCHED = "ADD_DIAGNOSES_FETCHED"
 const ADD_MEDICATION = 'ADD_MEDICATION'
 const DELETE_MEDICATION = 'DELETE_MEDICATION'
