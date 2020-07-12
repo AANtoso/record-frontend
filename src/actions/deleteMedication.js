@@ -1,7 +1,7 @@
-import { deleteAMedication } from "../reducers/diagnosisReducer"
+// import { deleteAMedication } from "../reducers/diagnosisReducer"
 
 export const deleteMedication = (medicationID, diagnosisID) => {
-    return (dispatch, getState) => {
+    return () => {
         // dispatch(deleteAMedication(medicationID, getState().medications))
 
         fetch(`http://localhost:3001/api/v1/diagnoses/${diagnosisID}/medications/${medicationID}`, {
