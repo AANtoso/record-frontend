@@ -29,7 +29,6 @@ class App extends Component {
           <Route exact path='/diagnoses/:id' render={(routerProps) => <Diagnosis {...routerProps} diagnoses={this.props.diagnoses} />} />
           {/* <Route exact path='/diagnoses/:id' render={(routerProps) => {
             const medications = this.props.medications.filter(medication => medication.diagnosis_id === routerProps.match.params.id)
-            // debugger
             return <Diagnosis {...routerProps} medications={medications} />
           }} /> */}
           <Route exact path='/diagnoses' render={(routerProps) => <DiagnosesContainer {...routerProps} diagnoses={this.props.diagnoses} />} />

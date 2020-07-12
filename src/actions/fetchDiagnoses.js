@@ -12,7 +12,6 @@ export const fetchDiagnoses = () => {
             dispatch(addFetchedDiagnoses(diagnoses))
             diagnoses.forEach(diagnosis => {
                 diagnosis.medications.forEach(medication => {
-                    // debugger
                     medications.push(medication)
                 })
             })

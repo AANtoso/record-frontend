@@ -23,14 +23,18 @@ export default function diagnosisReducer(state = initialState, action) {
                 medications: action.payload.medications
             }
         case DELETE_MEDICATION:
-            let remainingDiagnoses = state.diagnoses.map(diagnosis => {
-                if (diagnosis.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return diagnosis
-                }
-            })
-            return {...state, diagnoses: remainingDiagnoses}
+            return {
+                ...state, 
+                medications: action.payload.medications
+            }
+            // let remainingDiagnoses = state.diagnoses.map(diagnosis => {
+            //     if (diagnosis.id === action.payload.id) {
+            //         return action.payload
+            //     } else {
+            //         return diagnosis
+            //     }
+            // })
+            // return {...state, diagnoses: remainingDiagnoses}
         default:
             return state
     }
@@ -67,6 +71,15 @@ export const getAllMeds = medications => {
         type: GET_ALL_MEDS,
         payload: {
             medications
+        }
+    }
+}
+
+export const deleteAMedication = (medID, medications) => {
+    return {
+        type: DELETE_MEDICATION,
+        payload: {
+            medications: medications.filter(medication => medication.id !== parseInt(medID))
         }
     }
 }

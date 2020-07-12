@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 // import { connect } from 'react-redux'
 
 const Medication = props => {
-// debugger
 
     // const handleDelete = (event) => {
     //     const medId = event.target.parentElement.parentElement.dataset.id
