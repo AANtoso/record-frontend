@@ -14,7 +14,7 @@ const Medications = props => {
         // debugger
         props.deleteMedication(medId, dId)
         // event.target.parentElement.parentElement.remove()
-        props.deleteAMedication(medId, props.medications)
+        // props.deleteAMedication(medId, props.medications)
     }
     const thisDiagMeds = props.medications.filter(medication => medication.diagnosis_id === props.diagnosis.id)
 
