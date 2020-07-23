@@ -46,11 +46,11 @@ class MedicationInput extends Component {
             <div>
                 <Form onSubmit={event => this.handleOnSubmit(event)}>
                     <Form.Label> Name:</Form.Label>
-                    <Form.Control onChange={event => this.handleOnChange(event)} name='name' type='text' value={this.state.name}></Form.Control>
+                    <Form.Control onChange={event => this.handleOnChange(event)} name='name' type='text' value={this.state.name} required></Form.Control>
                     <Form.Label> Dose:</Form.Label>
-                    <Form.Control onChange={event => this.handleOnChange(event)} name='dose' type='text' value={this.state.dose}></Form.Control>
+                    <Form.Control onChange={event => this.handleOnChange(event)} name='dose' type='text' value={this.state.dose} required></Form.Control>
                     <Form.Label> Frequency:</Form.Label>
-                    <Form.Control onChange={event => this.handleOnChange(event)} name='frequency' type='text' value={this.state.frequency}></Form.Control>
+                    <Form.Control onChange={event => this.handleOnChange(event)} name='frequency' type='text' value={this.state.frequency} required></Form.Control>
                     <Form.Label> Has this medication been called in?</Form.Label>    
                     <Form.Check label='Yes' type='radio' name='called in' onChange={this.handleYes} />
                     <Form.Check label='No' type='radio' name='called in' />
