@@ -9,7 +9,7 @@ class MedicationInput extends Component {
         name: '',
         dose: '',
         frequency: '',
-        called_in: ''
+        called_in: null
     }
 
     handleOnChange = event => {
@@ -24,12 +24,21 @@ class MedicationInput extends Component {
     }
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addMedication(this.state, this.props.diagnosis.id);
-        this.setState({
-            name: '',
-            dose: '',
-            frequency: ''
-        })
+        const {name, dose, frequency, called_in} = this.state
+        if (name === '' || dose === '' || frequency === '' || called_in === null) {
+            alert('Invalid input or no input detected.')
+        
+        }
+        else {
+            this.props.addMedication(this.state, this.props.diagnosis.id);
+            this.setState({
+                name: '',
+                dose: '',
+                frequency: '',
+                called_in: null
+            })
+        }
+       
     }
 
     render() {

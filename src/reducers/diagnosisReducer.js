@@ -1,15 +1,15 @@
 const initialState = {
     diagnoses: [],
     medications: [],
-    particularDiagMeds: []
+    particularDiagMeds: [],
 }
 
 export default function diagnosisReducer(state = initialState, action) {
+    console.log('state is',state)
     switch (action.type) {
         case ADD_DIAGNOSES_FETCHED:
             return {
                 ...state,
-                loading: false,
                 diagnoses: action.payload.diagnoses
             }
         case ADD_MEDICATION:
