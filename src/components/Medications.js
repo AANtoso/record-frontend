@@ -13,7 +13,9 @@ const Medications = props => {
         const dId = event.target.parentElement.parentElement.dataset.diagnosisId
         props.deleteMedication(medId, dId)
     }
-    const thisDiagMeds = props.medications.filter(medication => medication.diagnosis_id === props.diagnosis.id)
+    const thisDiagMeds = props.medications.filter(medication => medication.diagnosis_id === props.diagnosis.id).sort((a, b) => {
+        return a.name.localeCompare(b.name)
+    })
 
     const renderMedications = thisDiagMeds.map(medication => {
             return (
