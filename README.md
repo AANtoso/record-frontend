@@ -2,7 +2,8 @@
 
 ## Overview
 Keeping track if your diagnoses and the medications that are associated with them can be an exhausting and tasking procedure! This application allows the user to save different medications, associating them with the diagnosis that they are being taken to treat.
-This is the React/Redux JS frontend. The backend of this project can be found at the following link: https://github.com/AANtoso/record-backend.
+This is the React/Redux JS frontend. 
+The backend of this project can be found at the following link: https://github.com/AANtoso/record-backend.
 My demo can be found at the following link: https://www.youtube.com/watch?v=DQ_FKXaEl20
 
 ## Installation
