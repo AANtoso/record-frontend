@@ -8,7 +8,7 @@ The backend of this project can be found at the following link: https://github.c
 
 ![Demo Gif](https://github.com/AANtoso/record-frontend/blob/master/React-Redux.gif?raw=true)
 
-My Demo can be found at the following link:https://www.youtube.com/watch?v=DQ_FKXaEl20&t=3s
+My Demo can be found at the following link: https://www.youtube.com/watch?v=DQ_FKXaEl20&t=3s
 
 ## Installation
 Clone this repository as well as the backend repository (located above) and follow the following directions:
