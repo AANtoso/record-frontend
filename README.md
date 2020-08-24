@@ -6,7 +6,7 @@ This is the React/Redux JS frontend.
 
 The backend of this project can be found at the following link: https://github.com/AANtoso/record-backend.
 
-My demo can be found at the following link: https://www.youtube.com/watch?v=DQ_FKXaEl20
+![Demo Gif](https://github.com/AANtoso/record-frontend/blob/master/React-Redux.gif?raw=true)
 
 ## Installation
 Clone this repository as well as the backend repository (located above) and follow the following directions:
